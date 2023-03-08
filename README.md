@@ -13,7 +13,7 @@ $ git remote add origin https://github.com/ledibonibell/lab-03.git
 $ git push -u origin master
 ```
 ```
-$ git checkout -b wp/lab
+$ git checkout -b lab
 $ cat >> CMakeLists.txt << EOF
 > EOF
 $ nano CMakeLists.txt
@@ -32,6 +32,16 @@ project(formatter)
 add_library(formatter STATIC formatter.cpp)
 target_include_directories(formatter PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 ```
+
+```
+$ git add CMakeLists.txt
+$ git commit -m "added CMakeLists.txt"
+$ git push origin master
+$ git add formatter.cpp
+$ git commit -m "added formatter.cpp"
+$ git push origin lab
+```
+
 ```
 $ cmake -H. -B_build
 $ cmake --build _build
