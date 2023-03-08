@@ -33,7 +33,13 @@ add_library(formatter STATIC formatter.cpp)
 target_include_directories(formatter PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 ```
 
+- Команда cmake_minimum_required указывает подходящую минимальную версию Cmake
+- Команды set(CMAKE_CXX_STANDARD 11), set(CMAKE_CXX_STANDARD_REQUIRED ON) устанавливают значения стандартных переменных в Cmake(в данном случае CMAKE_CXX_STANDARD и CMAKE_CXX_STANDARD_REQUIRED)
+- Команда project(formatter) создает проект formatter, к которому можно подключать библиотеки, исполняемы файлы и т.д.
+- Команда add_library(formatter STATIC formatter.cpp) создает статическую библиотеку из указываемых файлов
+- Команда target_include_directories связывает библиотеку formatter и CMAKE_CURRENT_SOURCE_DIR
 ```
+
 $ git add CMakeLists.txt
 $ git commit -m "added CMakeLists.txt"
 $ git push origin lab
@@ -76,6 +82,10 @@ target_include_directories(formatter_ex PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(formatter_ex formatter)
 ```
 
+- Команда add_subdirectory(../formatter_lib formatter) включает в сборку директорию с библиотекой formatter
+- Команда target_link_libraries(formatter_ex formatter) связывает библиотеку formatter с formatter_ex
+- Остальные команды аналогичны первому заданию
+
 ```
 $ git add CMakeLists.txt
 $ git commit -m "added CMakeLists.txt"
@@ -95,7 +105,8 @@ $ cmake --build _build
 Конечно же ваша компания предоставляет примеры использования своих библиотек. Чтобы продемонстрировать как работать с библиотекой `formatter_ex`, вам необходимо создать два `CMakeList.txt` для двух простых приложений:
 
 - `hello_world`, которое использует библиотеку `formatter_ex`;
-- `solver`, приложение которое испольует статические библиотеки `formatter_ex` и `solver_lib`.
+- `solver`, приложение которое испольует статические библиотеки `formatter_ex` и `solver_lib`
+
 Удачной стажировки!
 
 ### solver.cpp
@@ -119,6 +130,8 @@ project(solver_lib)
 add_library(solver_lib STATIC solver.cpp)
 target_include_directories(solver_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 ```
+
+- Команды аналогичны заданию 2 и 3
 
 ```
 $ git add CMakeLists.txt
@@ -161,6 +174,8 @@ add_executable(example equation.cpp)
 target_link_libraries(example solver_lib formatter_ex)
 ```
 
+- Команды аналогичны заданию 2 и 3
+
 ```
 $ git add CMakeLists.txt
 $ git commit -m "added CMakeLists.txt"
@@ -182,7 +197,7 @@ $ cmake --build _build --target example
 $ ./_build/example
 ```
 
-### 
+### hello_world.cpp
 
 ```
 $ git checkout -b lab
@@ -207,6 +222,8 @@ add_executable(example hello_world.cpp)
 target_link_libraries(example formatter_ex)
 ```
 
+- Команды аналогичны заданию 2 и 3
+
 ```
 $ git add CMakeLists.txt
 $ git commit -m "added CMakeLists.txt"
@@ -228,3 +245,7 @@ $ cmake --build _build --target example
 $ ./_build/example
 ```
 
+## Required libraries
+```
+$ sudo apt install cmake - устанавливаем пакет cmake
+```
