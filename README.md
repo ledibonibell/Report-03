@@ -38,10 +38,13 @@ target_include_directories(formatter PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 - Команда project(formatter) создает проект formatter, к которому можно подключать библиотеки, исполняемы файлы и т.д.
 - Команда add_library(formatter STATIC formatter.cpp) создает статическую библиотеку из указываемых файлов
 - Команда target_include_directories связывает библиотеку formatter и CMAKE_CURRENT_SOURCE_DIR
-```
 
+```
 $ git add CMakeLists.txt
 $ git commit -m "added CMakeLists.txt"
+$ git push origin lab
+$ git add formatter.h
+$ git commit -m "added formatter.h"
 $ git push origin lab
 $ git add formatter.cpp
 $ git commit -m "added formatter.cpp"
@@ -90,6 +93,9 @@ target_link_libraries(formatter_ex formatter)
 $ git add CMakeLists.txt
 $ git commit -m "added CMakeLists.txt"
 $ git push origin lab
+$ git add formatter_ex.h
+$ git commit -m "added formatter_ex.h"
+$ git push origin lab
 $ git add formatter_ex.cpp
 $ git commit -m "added formatter_ex.cpp"
 $ git push origin lab
@@ -136,6 +142,9 @@ target_include_directories(solver_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 ```
 $ git add CMakeLists.txt
 $ git commit -m "added CMakeLists.txt"
+$ git push origin lab
+$ git add solver.h
+$ git commit -m "added solver.h"
 $ git push origin lab
 $ git add solver.cpp
 $ git commit -m "added solver.cpp"
