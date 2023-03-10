@@ -113,9 +113,10 @@ $ git push origin lab
 ```
 $ cmake -H. -B_build
 $ cmake --build _build
+```
+
 ![Снимок экрана от 2023-03-05 22-42-42](https://user-images.githubusercontent.com/125737299/224362332-43b22a5a-dd87-430c-8966-0ccf0f8f0f96.png)
 ![Снимок экрана от 2023-03-05 23-05-50](https://user-images.githubusercontent.com/125737299/224362500-d694c5a9-146f-4683-a8a4-9d91d854ad6e.png)
-```
 
 # Task 3
 Конечно же ваша компания предоставляет примеры использования своих библиотек. Чтобы продемонстрировать как работать с библиотекой `formatter_ex`, вам необходимо создать два `CMakeList.txt` для двух простых приложений:
